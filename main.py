@@ -1,0 +1,70 @@
+import Les
+
+lista1 = Les.Les(5)
+lista2 = Les.Les(4)
+
+if not lista1.esta_cheia():
+    lista1.inserir_fim('A')
+if not lista1.esta_cheia():
+    lista1.inserir_inicio('B')
+if not lista1.esta_cheia():
+    lista1.inserir_fim('C')
+if not lista1.esta_cheia():
+    lista1.inserir_inicio('D')
+if not lista1.esta_cheia():
+    lista1.inserir_fim('E')
+print('Antes de inserir F: ')
+print('Esperado: DBACE')
+lista1.show()
+
+if not lista1.esta_cheia():
+    lista1.inserir_fim('F')
+print('Apos inserir F')
+print('Esperado: DBACE')
+lista1.show()
+for i in range(2):
+    lista2.inserir_fim(lista1.get_prim())
+    lista1.remover_inicio()
+print('Lista 1 apos o for')
+print('Esperado: ACE')
+lista1.show()
+print('Lista 2 apos o for')
+print('Esperado DB')
+lista2.show()
+
+print('L1 antes de inserir G apos A')
+print('Esperado: ACE')
+lista1.show()
+print('L1 depois de inserir G apos A')
+print('Esperado: AGCE')
+lista1.inserir_apos('G', 'A')
+lista1.show()
+print('L1 depois de inserir H apos E')
+print('Esperado: AGCEH')
+lista1.inserir_apos('H', 'E')
+lista1.show()
+print('L1 apos remover o inicio')
+print('Esperado: GCEH')
+lista1.remover_inicio()
+lista1.show()
+
+print('L1 apos remover o fim')
+print('Esperado: GCE')
+lista1.remover_fim()
+lista1.show()
+print('L1 apos inserir I apos H')
+print('Esperado: GCE')
+lista1.remover_fim()
+lista1.inserir_apos('I', 'H')
+lista1.show()
+print('L1 apos inserir J apos E')
+print('Esperado: GCEJ')
+lista1.inserir_apos('J', 'E')
+lista1.show()
+print('L2 antes de inserir K antes de D')
+print('Esperado: BD')
+lista2.show()
+print('L2 depois de inserir K antes de D')
+print('Esperado: KDB')
+lista2.inserir_antes('K', 'D')
+lista2.show()
